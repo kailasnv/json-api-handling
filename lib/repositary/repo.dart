@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 class Repositary {
   static Future<List<ProductModal>?> getProducts(BuildContext context) async {
     // list of modals
-    List<ProductModal> ProductList = [];
+    List<ProductModal> productList = [];
     try {
       // fetching api
       const String URL = "https://fakestoreapi.com/products";
@@ -20,10 +20,10 @@ class Repositary {
         final jsonData = jsonDecode(response.body);
         for (var eachItem in jsonData) {
           final modal = ProductModal.fromJson(eachItem);
-          ProductList.add(modal);
+          productList.add(modal);
         }
-        print("LENGTH OF ITEMS >> ${ProductList.length}");
-        return ProductList;
+        print("LENGTH OF ITEMS >> ${productList.length}");
+        return productList;
       }
     } catch (e) {
       print("Network Error  : $e");

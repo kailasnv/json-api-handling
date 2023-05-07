@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           itemCount: productLists!.length,
           itemBuilder: (context, index) {
             if (productLists != null) {
-              return Container(
+              return SizedBox(
                 width: double.infinity,
                 height: 250,
                 child: Column(
