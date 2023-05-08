@@ -27,7 +27,8 @@ class Repositary {
       }
     } catch (e) {
       print("Network Error  : $e");
-      PopUps().showErrorMessage(context, e.toString());
+      PopUps()
+          .showErrorMessage(context, e.toString()); // this shows  a snackbar
     }
   }
 }
