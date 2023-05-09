@@ -16,42 +16,37 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeEvent {
-  BuildContext get context => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BuildContext context) fetchApiEvent,
+    required TResult Function() fetchApiEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(BuildContext context)? fetchApiEvent,
+    TResult? Function()? fetchApiEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BuildContext context)? fetchApiEvent,
+    TResult Function()? fetchApiEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_fetchApiEvent value) fetchApiEvent,
+    required TResult Function(FetchApiEvent value) fetchApiEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_fetchApiEvent value)? fetchApiEvent,
+    TResult? Function(FetchApiEvent value)? fetchApiEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_fetchApiEvent value)? fetchApiEvent,
+    TResult Function(FetchApiEvent value)? fetchApiEvent,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $HomeEventCopyWith<HomeEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -59,8 +54,6 @@ mixin _$HomeEvent {
 abstract class $HomeEventCopyWith<$Res> {
   factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
       _$HomeEventCopyWithImpl<$Res, HomeEvent>;
-  @useResult
-  $Res call({BuildContext context});
 }
 
 /// @nodoc
@@ -72,108 +65,67 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? context = null,
-  }) {
-    return _then(_value.copyWith(
-      context: null == context
-          ? _value.context
-          : context // ignore: cast_nullable_to_non_nullable
-              as BuildContext,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$_fetchApiEventCopyWith<$Res>
-    implements $HomeEventCopyWith<$Res> {
-  factory _$$_fetchApiEventCopyWith(
-          _$_fetchApiEvent value, $Res Function(_$_fetchApiEvent) then) =
-      __$$_fetchApiEventCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({BuildContext context});
+abstract class _$$FetchApiEventCopyWith<$Res> {
+  factory _$$FetchApiEventCopyWith(
+          _$FetchApiEvent value, $Res Function(_$FetchApiEvent) then) =
+      __$$FetchApiEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_fetchApiEventCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$_fetchApiEvent>
-    implements _$$_fetchApiEventCopyWith<$Res> {
-  __$$_fetchApiEventCopyWithImpl(
-      _$_fetchApiEvent _value, $Res Function(_$_fetchApiEvent) _then)
+class __$$FetchApiEventCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$FetchApiEvent>
+    implements _$$FetchApiEventCopyWith<$Res> {
+  __$$FetchApiEventCopyWithImpl(
+      _$FetchApiEvent _value, $Res Function(_$FetchApiEvent) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? context = null,
-  }) {
-    return _then(_$_fetchApiEvent(
-      context: null == context
-          ? _value.context
-          : context // ignore: cast_nullable_to_non_nullable
-              as BuildContext,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$_fetchApiEvent implements _fetchApiEvent {
-  const _$_fetchApiEvent({required this.context});
-
-  @override
-  final BuildContext context;
+class _$FetchApiEvent implements FetchApiEvent {
+  const _$FetchApiEvent();
 
   @override
   String toString() {
-    return 'HomeEvent.fetchApiEvent(context: $context)';
+    return 'HomeEvent.fetchApiEvent()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_fetchApiEvent &&
-            (identical(other.context, context) || other.context == context));
+        (other.runtimeType == runtimeType && other is _$FetchApiEvent);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, context);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_fetchApiEventCopyWith<_$_fetchApiEvent> get copyWith =>
-      __$$_fetchApiEventCopyWithImpl<_$_fetchApiEvent>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BuildContext context) fetchApiEvent,
+    required TResult Function() fetchApiEvent,
   }) {
-    return fetchApiEvent(context);
+    return fetchApiEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(BuildContext context)? fetchApiEvent,
+    TResult? Function()? fetchApiEvent,
   }) {
-    return fetchApiEvent?.call(context);
+    return fetchApiEvent?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BuildContext context)? fetchApiEvent,
+    TResult Function()? fetchApiEvent,
     required TResult orElse(),
   }) {
     if (fetchApiEvent != null) {
-      return fetchApiEvent(context);
+      return fetchApiEvent();
     }
     return orElse();
   }
@@ -181,7 +133,7 @@ class _$_fetchApiEvent implements _fetchApiEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_fetchApiEvent value) fetchApiEvent,
+    required TResult Function(FetchApiEvent value) fetchApiEvent,
   }) {
     return fetchApiEvent(this);
   }
@@ -189,7 +141,7 @@ class _$_fetchApiEvent implements _fetchApiEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_fetchApiEvent value)? fetchApiEvent,
+    TResult? Function(FetchApiEvent value)? fetchApiEvent,
   }) {
     return fetchApiEvent?.call(this);
   }
@@ -197,7 +149,7 @@ class _$_fetchApiEvent implements _fetchApiEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_fetchApiEvent value)? fetchApiEvent,
+    TResult Function(FetchApiEvent value)? fetchApiEvent,
     required TResult orElse(),
   }) {
     if (fetchApiEvent != null) {
@@ -207,22 +159,14 @@ class _$_fetchApiEvent implements _fetchApiEvent {
   }
 }
 
-abstract class _fetchApiEvent implements HomeEvent {
-  const factory _fetchApiEvent({required final BuildContext context}) =
-      _$_fetchApiEvent;
-
-  @override
-  BuildContext get context;
-  @override
-  @JsonKey(ignore: true)
-  _$$_fetchApiEventCopyWith<_$_fetchApiEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class FetchApiEvent implements HomeEvent {
+  const factory FetchApiEvent() = _$FetchApiEvent;
 }
 
 /// @nodoc
 mixin _$HomeState {
   bool get isLoading => throw _privateConstructorUsedError;
-  Products? get products => throw _privateConstructorUsedError;
+  List<ProductModal>? get products => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -234,9 +178,7 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({bool isLoading, Products? products});
-
-  $ProductsCopyWith<$Res>? get products;
+  $Res call({bool isLoading, List<ProductModal>? products});
 }
 
 /// @nodoc
@@ -263,20 +205,8 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       products: freezed == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
-              as Products?,
+              as List<ProductModal>?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ProductsCopyWith<$Res>? get products {
-    if (_value.products == null) {
-      return null;
-    }
-
-    return $ProductsCopyWith<$Res>(_value.products!, (value) {
-      return _then(_value.copyWith(products: value) as $Val);
-    });
   }
 }
 
@@ -287,10 +217,7 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       __$$_HomeStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, Products? products});
-
-  @override
-  $ProductsCopyWith<$Res>? get products;
+  $Res call({bool isLoading, List<ProductModal>? products});
 }
 
 /// @nodoc
@@ -313,9 +240,9 @@ class __$$_HomeStateCopyWithImpl<$Res>
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       products: freezed == products
-          ? _value.products
+          ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
-              as Products?,
+              as List<ProductModal>?,
     ));
   }
 }
@@ -323,12 +250,21 @@ class __$$_HomeStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_HomeState implements _HomeState {
-  const _$_HomeState({required this.isLoading, this.products});
+  const _$_HomeState(
+      {required this.isLoading, final List<ProductModal>? products})
+      : _products = products;
 
   @override
   final bool isLoading;
+  final List<ProductModal>? _products;
   @override
-  final Products? products;
+  List<ProductModal>? get products {
+    final value = _products;
+    if (value == null) return null;
+    if (_products is EqualUnmodifiableListView) return _products;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -342,12 +278,12 @@ class _$_HomeState implements _HomeState {
             other is _$_HomeState &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.products, products) ||
-                other.products == products));
+            const DeepCollectionEquality().equals(other._products, _products));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, products);
+  int get hashCode => Object.hash(
+      runtimeType, isLoading, const DeepCollectionEquality().hash(_products));
 
   @JsonKey(ignore: true)
   @override
@@ -358,12 +294,13 @@ class _$_HomeState implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
-      {required final bool isLoading, final Products? products}) = _$_HomeState;
+      {required final bool isLoading,
+      final List<ProductModal>? products}) = _$_HomeState;
 
   @override
   bool get isLoading;
   @override
-  Products? get products;
+  List<ProductModal>? get products;
   @override
   @JsonKey(ignore: true)
   _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>
