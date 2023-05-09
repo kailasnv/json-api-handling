@@ -1,72 +1,34 @@
-import 'package:fakapi/modals/poduct_modal.dart';
 import "package:flutter/material.dart";
-import 'package:fakapi/repositary/repo.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import "../bloc/home_bloc.dart";
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  // some variables
-  bool isLoaded = false;
-  List<ProductModal>? productLists = [];
-
-  Future getData() async {
-    productLists = await Repositary.getProducts(context);
-
-    if (productLists != null) {
-      setState(() {
-        isLoaded = true;
-      });
-    }
-  }
-
-  @override
-  void initState() {
-    getData();
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    context.read<HomeBloc>().add(HomeEvent.fetchApiEvent(context: context));
     return Scaffold(
-      backgroundColor: Colors.grey.shade800,
-      appBar: AppBar(),
-      body: Visibility(
-        visible: isLoaded,
-        replacement: const Center(child: CircularProgressIndicator()),
-        child: ListView.builder(
-          itemCount: productLists!.length,
-          itemBuilder: (context, index) {
-            if (productLists != null) {
-              return SizedBox(
-                width: double.infinity,
-                height: 250,
-                child: Column(
-                  children: [
-                    Text(productLists![index].title),
-                    Image.network(
-                      productLists![index].image,
-                      width: 100,
-                      fit: BoxFit.contain,
-                    ),
-                    Text(productLists![index].price.toString()),
-                  ],
-                ),
-              );
-            } else {
+        backgroundColor: Colors.grey.shade800,
+        appBar: AppBar(
+          backgroundColor: Colors.deepPurple,
+        ),
+        body: BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            if (state.isLoading) {
+              return const CircularProgressIndicator();
+            }
+
+            if (state.products != null) {
               return const Center(
                   child: Text(
-                "NO ITEMS FOUND",
+                "<< Items found >>",
                 style: TextStyle(color: Colors.yellow),
               ));
+            } else {
+              return const SizedBox(width: 1);
             }
           },
-        ),
-      ),
-    );
+        ));
   }
 }
